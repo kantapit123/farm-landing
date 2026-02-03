@@ -155,11 +155,7 @@ export const navItems = [
   { id: 'vision', label: 'Vision' },
   { id: 'live-data', label: 'Live Data' },
   { id: 'roadmap', label: 'Roadmap' },
-  { id: 'founder', label: 'Founder' },
   { id: 'values', label: 'Values' },
-  { id: 'journal', label: 'Journal' },
-  { id: 'tech', label: 'Tech' },
-  { id: 'preview', label: 'Preview' },
   { id: 'location', label: 'Location' },
   { id: 'contact', label: 'Contact' },
 ]
