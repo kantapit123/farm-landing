@@ -4,6 +4,12 @@ import { Container, Button } from '../components'
 export const Hero: React.FC = () => {
   return (
     <section id="vision" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-25"
+        style={{ backgroundImage: "url('/images/farm.png')" }}
+        aria-hidden
+      />
       {/* Background Elements */}
       <div className="absolute inset-0 bg-hero-gradient" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
