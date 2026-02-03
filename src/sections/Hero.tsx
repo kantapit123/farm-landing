@@ -9,11 +9,11 @@ export const Hero: React.FC = () => {
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
       
-      {/* Decorative SVG Leaves */}
-      <svg className="absolute top-32 right-10 w-24 h-24 text-primary/10" viewBox="0 0 100 100" fill="currentColor">
+      {/* Decorative SVG Leaves — hidden on mobile so they don't cover text */}
+      <svg className="absolute top-32 right-10 w-24 h-24 text-primary/10 hidden lg:block pointer-events-none" viewBox="0 0 100 100" fill="currentColor" aria-hidden>
         <path d="M50 5C50 5 80 20 85 50C90 80 50 95 50 95C50 95 10 80 15 50C20 20 50 5 50 5Z" />
       </svg>
-      <svg className="absolute bottom-40 left-10 w-16 h-16 text-accent/10" viewBox="0 0 100 100" fill="currentColor">
+      <svg className="absolute bottom-40 left-10 w-16 h-16 text-accent/10 hidden lg:block pointer-events-none" viewBox="0 0 100 100" fill="currentColor" aria-hidden>
         <path d="M50 5C50 5 80 20 85 50C90 80 50 95 50 95C50 95 10 80 15 50C20 20 50 5 50 5Z" />
       </svg>
 

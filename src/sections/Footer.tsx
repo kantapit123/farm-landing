@@ -12,9 +12,9 @@ export const Footer: React.FC = () => {
   ]
 
   const socialLinks = [
-    { icon: 'facebook', href: '#', label: 'Facebook' },
-    { icon: 'instagram', href: '#', label: 'Instagram' },
-    { icon: 'youtube', href: '#', label: 'YouTube' },
+    { icon: 'share', href: '#', label: 'Facebook' },
+    { icon: 'photo_camera', href: '#', label: 'Instagram' },
+    { icon: 'play_circle', href: '#', label: 'YouTube' },
     { icon: 'mail', href: '#', label: 'Email' },
   ]
 
@@ -35,16 +35,19 @@ export const Footer: React.FC = () => {
                 <span className="font-thai">ฟาร์มเรียนรู้ที่เติบโตไปกับธรรมชาติ</span>
               </p>
               
-              {/* Social Links */}
-              <div className="flex items-center gap-2">
+              {/* Social Links — use Material Symbols that exist (share, photo_camera, play_circle, mail) */}
+              <div className="flex flex-wrap items-center gap-3">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
-                    className="w-10 h-10 bg-surface border border-border rounded-xl flex items-center justify-center text-muted hover:text-primary hover:border-primary hover:bg-primary-50 transition-all"
+                    className="inline-flex shrink-0 w-10 h-10 bg-surface border border-border rounded-xl items-center justify-center text-muted hover:text-primary hover:border-primary hover:bg-primary-50 transition-all"
                     aria-label={social.label}
+                    title={social.label}
                   >
-                    <span className="material-symbols-outlined text-[20px]">{social.icon}</span>
+                    <span className="material-symbols-outlined text-[22px]" aria-hidden>
+                      {social.icon}
+                    </span>
                   </a>
                 ))}
               </div>

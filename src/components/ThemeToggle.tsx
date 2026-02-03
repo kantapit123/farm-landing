@@ -4,15 +4,15 @@ export const ThemeToggle: React.FC = () => {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
-    // Check localStorage or system preference on mount
+    // Default: light theme. Only use dark if user explicitly chose it (stored in localStorage).
     const stored = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
-    const shouldBeDark = stored === 'dark' || (!stored && prefersDark)
+    const shouldBeDark = stored === 'dark'
     setIsDark(shouldBeDark)
-    
+
     if (shouldBeDark) {
       document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
     }
   }, [])
 
