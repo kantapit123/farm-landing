@@ -104,6 +104,16 @@ farm-landing/
 
 ## Cloudflare Pages Deployment
 
+### Important: Use npm (not Yarn)
+
+Cloudflare auto-detects the package manager from lockfiles. **This project uses npm only.** Remove `yarn.lock` if present so Cloudflare runs `npm install` instead of `yarn`. Otherwise you may see:
+
+```
+YN0028: The lockfile would have been modified by this install, which is explicitly forbidden.
+```
+
+Keep only `package-lock.json` in the repo for Cloudflare builds.
+
 ### Settings
 
 | Setting | Value |
@@ -115,19 +125,20 @@ farm-landing/
 
 ### Environment Variables
 
-Set in Cloudflare Pages dashboard:
-- `NODE_VERSION`: `18` or `20`
+Set in Cloudflare Pages dashboard (optional):
+- `NODE_VERSION`: `18` or `20` (`.nvmrc` with `18` is also committed)
+- `NPM_FLAGS`: `--prefer-offline --no-audit` (optional, faster installs)
 
 ### Deploy Steps
 
-1. Push your code to GitHub/GitLab
+1. Push your code to GitHub/GitLab (ensure no `yarn.lock` — only `package-lock.json`).
 2. Go to [Cloudflare Pages](https://pages.cloudflare.com/)
 3. Click "Create a project"
 4. Connect your repository
 5. Configure build settings:
    - Build command: `npm run build`
    - Build output directory: `dist`
-6. Add environment variable: `NODE_VERSION = 18`
+6. (Optional) Add environment variable: `NODE_VERSION` = `18`
 7. Click "Save and Deploy"
 
 ## How to Rename "Wittaya Farm"
